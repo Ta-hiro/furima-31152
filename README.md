@@ -30,8 +30,8 @@
 | todou_id                       | integer    | null: false       |
 | shipping_period_id             | integer    | null: false       |
 | price                          | integer    | null: false       |
-| user_id                        | references | foreign_key: true |
-| buy_id                         | references | foreign_key: true |
+| user                           | references | foreign_key: true |
+| buy                            | references | foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -42,9 +42,9 @@
 
 | Column         | Type        | Options           |
 |----------------|-------------|-------------------|
-| item_id        | references  | foreign_key: true |
-| user_id        | references  | foreign_key: true |
-| address_id     | references  | foreign_key: true |
+| item           | references  | foreign_key: true |
+| user           | references  | foreign_key: true |
+| address        | references  | foreign_key: true |
 
 ### Association
 - belongs_to :item
