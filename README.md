@@ -14,9 +14,9 @@
 | birthday           | date                | null: false             |
 
 ### Association
-
 * has_many : items
 * has_many : buys
+
 
 ## items table
 
@@ -24,38 +24,44 @@
 |--------------------------------|------------|-------------------|
 | product_name                   | string     | null: false       |
 | explanation                    | text       | null: false       |
-| category                       | integer    | null: false       |
-| product_status                 | integer    | null: false       |
-| delivery_burden                | integer    | null: false       |
-| i_todou                        | integer    | null: false       |
-| shipping_period                | integer    | null: false       |
+| category_id                    | integer    | null: false       |
+| product_status_id              | integer    | null: false       |
+| delivery_burden_id             | integer    | null: false       |
+| todou_id                       | integer    | null: false       |
+| shipping_period_id             | integer    | null: false       |
 | price                          | integer    | null: false       |
-| concept                        | text       | null: false       |
 | user_id                        | references | foreign_key: true |
 | buy_id                         | references | foreign_key: true |
 
 ### Association
-
 - belongs_to :user
 - has_one :buy
+
 
 ## buys table
 
 | Column         | Type        | Options           |
 |----------------|-------------|-------------------|
-| credit_status  | integer     | null: false       |
-| expiration     | integer     | null: false       | 
-| security_code  | integer     | null: false       |
-| b_todou        | integer     | null: false       |
+| item_id        | references  | foreign_key: true |
+| user_id        | references  | foreign_key: true |
+| address_id     | references  | foreign_key: true |
+
+### Association
+- belongs_to :item
+- belongs_to :user
+- belongs_to :address
+
+
+## addresses table
+
+| Column         | Type        | Options           |
+|----------------|-------------|-------------------|
+| todou_id       | integer     | null: false       |
 | postal_code    | text        | null: false       |
 | phone_number   | text        | null: false       |
 | sityousonn     | text        | null: false       |
 | bannti         | text        | null: false       |
 | tatemono       | text        | null: false       |
-| item_id        | references  | foreign_key: true |
-| user_id        | references  | foreign_key: true |
 
 ### Association
-
-- belongs_to :item
-- belongs_to :user
+- has_one :buy
