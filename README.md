@@ -55,11 +55,11 @@
 | Column         | Type        | Options           |
 |----------------|-------------|-------------------|
 | todou_id       | integer     | null: false       |
-| postal_code    | text        | null: false       |
+| postal_code    | string      | null: false       |
 | phone_number   | text        | null: false       |
-| sityousonn     | text        | null: false       |
-| bannti         | text        | null: false       |
-| tatemono       | text        | null: false       |
+| sityousonn     | string      | null: false       |
+| bannti         | string      | null: false       |
+| tatemono       | string      | null: false       |
 
 ### Association
 - has_one :buy
