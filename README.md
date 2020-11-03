@@ -56,7 +56,7 @@
 |----------------|-------------|-------------------|
 | todou_id       | integer     | null: false       |
 | postal_code    | string      | null: false       |
-| phone_number   | text        | null: false       |
+| phone_number   | string      | null: false       |
 | sityousonn     | string      | null: false       |
 | bannti         | string      | null: false       |
 | tatemono       | string      | null: false       |
