@@ -63,4 +63,4 @@
 | buy            | references  | foreign_key: true |
 
 ### Association
-- has_one :buy
+- belongs_to :buy
