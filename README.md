@@ -60,6 +60,7 @@
 | sityousonn     | string      | null: false       |
 | bannti         | string      | null: false       |
 | tatemono       | string      | null: false       |
+| buy            | references  | foreign_key: true |
 
 ### Association
 - has_one :buy
