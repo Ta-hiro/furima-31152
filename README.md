@@ -6,7 +6,7 @@
 |--------------------|---------------------|-------------------------|
 | nickname           | string              | null: false             |
 | email              | string              | null: false             |
-| password           | string              | null: false             |
+| encrypted_password | string              | null: false             |
 | f_name             | string              | null: false             |
 | f_name_kana        | string              | null: false             |
 | l_name             | string              | null: false             |
@@ -47,7 +47,7 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_oen :address
+- has_one :address
 
 
 ## addresses table
