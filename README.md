@@ -2,16 +2,19 @@
 
 ## users table
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| nickname           | string              | null: false             |
-| email              | string              | null: false             |
-| encrypted_password | string              | null: false             |
-| f_name             | string              | null: false             |
-| f_name_kana        | string              | null: false             |
-| l_name             | string              | null: false             |
-| l_name_kana        | string              | null: false             |
-| birthday           | date                | null: false             |
+| Column              | Type             | Options              |
+|---------------------|------------------|----------------------|
+| nickname            | string           | null: false          |
+| email               | string           | null: false          |
+| encrypted_password  | string           | null: false          |
+| f_name              | string           | null: false          |
+| f_name_kana         | string           | null: false          |
+| l_name              | string           | null: false          |
+| l_name_kana         | string           | null: false          |
+| birth_y_id          | integer          | null: false          |
+| birth_m_id          | integer          | null: false          |
+| birth_d_id          | integer          | null: false          |
+
 
 ### Association
 * has_many : items
