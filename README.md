@@ -59,7 +59,7 @@
 | phone_number   | string      | null: false       |
 | sityousonn     | string      | null: false       |
 | bannti         | string      | null: false       |
-| tatemono       | string      | null: false       |
+| tatemono       | string      |                   |
 | buy            | references  | foreign_key: true |
 
 ### Association
