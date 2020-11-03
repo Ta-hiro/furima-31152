@@ -11,10 +11,7 @@
 | f_name_kana         | string           | null: false          |
 | l_name              | string           | null: false          |
 | l_name_kana         | string           | null: false          |
-| birth_y_id          | integer          | null: false          |
-| birth_m_id          | integer          | null: false          |
-| birth_d_id          | integer          | null: false          |
-
+| birthday            | date             | null: false          |
 
 ### Association
 * has_many : items
