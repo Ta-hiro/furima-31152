@@ -13,7 +13,6 @@ class User < ApplicationRecord
   validates :f_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/}
   validates :l_name_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/}
   validates :birthday, presence: true
-  validates :encrypted_password, presence: true, format: {with: /\A[a-zA-Z0-9]+\z/}
-  validates :email, presence: true, uniqueness: true
-
+  validates :encrypted_password, format: {with: /\A[a-zA-Z0-9]+\z/}
+  # validates :email, presence: true, uniqueness: true
 end
