@@ -32,8 +32,8 @@ RSpec.describe User, type: :model do
       another_user = FactoryBot.build(:user)
       another_user.email = @user.email 
       another_user.valid?
-      binding.pry
-      expect(another_user.errors.full_messages).to include("email has already been taken")
+      # binding.pry
+      expect(another_user.errors.full_messages).to include("Email has already been taken")
     end
     it "emailに＠がないと登録できない" do
       @user.email = "tttttt"
@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = @user.password
       @user.valid?
       # binding.pry
-      expect(@user.errors.full_messages).to include("Password is too short(minimum is 6 characters)")
+      expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
     end
     it "passwordが半角英数字を使用してないと登録できない" do
       @user.password = "パスワード１２３"
