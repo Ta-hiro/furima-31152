@@ -12,11 +12,13 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :product_name
     validates :explanation
-    validates :category_id
-    validates :product_status_id
-    validates :delivery_burden_id
-    validates :prefectures_id
-    validates :shipping_period_id
+    with_options numericality: { other_than: 1 } do
+      validates :category_id
+      validates :product_status_id
+      validates :delivery_burden_id
+      validates :prefectures_id
+      validates :shipping_period_id
+    end
     validates :price, format: { with: /\A[0-9]+\z/, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   end
 end
