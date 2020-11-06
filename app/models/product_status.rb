@@ -1,2 +1,5 @@
-class ProductStatus < ApplicationRecord
+class ProductStatus < ActiveHash::Base
+
+  include ActiveHash::Associations
+  has_many :items
 end
