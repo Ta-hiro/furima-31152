@@ -5,14 +5,14 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
   belongs_to_active_hash :product_status
-  belongs_to_active_hash :delivery_burde
-  belongs_to_active_hash :prefectures
+  belongs_to_active_hash :delivery_burden
+  belongs_to_active_hash :prefecture
   belongs_to_active_hash :shipping_period
 
   with_options presence: true do
     validates :product_name
     validates :explanation
-    with_options numericality: { other_than: 1 } do
+    with_options numericality: { other_than: 0 } do
       validates :category_id
       validates :product_status_id
       validates :delivery_burden_id
