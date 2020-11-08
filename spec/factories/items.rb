@@ -16,4 +16,4 @@ FactoryBot.define do
     end
   end
 end
-# , content_type: 'image/jpg'
+
