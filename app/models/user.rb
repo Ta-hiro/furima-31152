@@ -7,7 +7,6 @@ class User < ApplicationRecord
   # has_many : items
   # has_many : buys
 
-
   full_width = { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
   full_width_kana = { with: /\A[ァ-ヶー－]+\z/ }
 
