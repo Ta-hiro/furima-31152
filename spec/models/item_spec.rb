@@ -71,7 +71,7 @@ RSpec.describe Item, type: :model do
       it 'priceが300円未満' do
         @item.price = 299
         @item.valid?
-        binding.pry
+        # binding.pry
         expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
       it 'priceが10000000円以上' do

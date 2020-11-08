@@ -19,7 +19,7 @@ class Item < ApplicationRecord
       validates :prefectures_id
       validates :shipping_period_id
     end
-    validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+    validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, only_integer: true}
   end
 end
 
