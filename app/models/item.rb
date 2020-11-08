@@ -24,5 +24,5 @@ class Item < ApplicationRecord
   end
 end
 
-# numericality
+
 # message
