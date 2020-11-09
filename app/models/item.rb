@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :product_status
   belongs_to_active_hash :delivery_burden
-  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :prefectures
   belongs_to_active_hash :shipping_period
 
   with_options presence: true do
