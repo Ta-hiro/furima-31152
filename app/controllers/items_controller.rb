@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order(id: :DESC)
+   
   end
 
   def new
@@ -22,8 +23,10 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def edit
-    redirect_to root_path unless @item.user == current_user
+  def edit 
+    unless @item.user == current_user
+      redirect_to root_path
+    end
   end
 
   def update
@@ -35,6 +38,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    unless @item.user == current_user
+      redirect_to root_path
+    end
     @item.destroy
     redirect_to root_path
   end
