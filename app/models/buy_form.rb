@@ -1,6 +1,6 @@
 class BuyForm
   include ActiveModel::Model
-   atter_accessor :user, :item, :buy, :postal_code, :phone_number,
+   atter_accessor :postal_code, :phone_number,
                   :prefectures_id, :city, :house_number, :building_name
 
   with_options presence: true do
