@@ -7,6 +7,7 @@ class BuyForm
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :prefectures_id, numericality: { other_than: 0 }
     validates :city, format: { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
+    validates :house_number
   end
   
   def save

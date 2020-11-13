@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order(id: :DESC)
+    @order = Order.select(:item_id)
    
   end
 
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @order = Order.select(:item_id)
   end
 
   def edit 
