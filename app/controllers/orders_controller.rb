@@ -8,10 +8,12 @@ class OrdersController < ApplicationController
 
   def create
     @buy = BuyForm.new(buy_params)
-    if @buy.save
+    if @buy.valid?
+      @buy.save
       redirect_to root_path
     else
-      render "order#index"
+      @item = Item.find(params[:item_id])
+      render action: :index
     end
   end
   
