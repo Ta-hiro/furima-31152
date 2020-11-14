@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # has_many : items
-  # has_many : buys
+  has_many :items
+  has_many :orders
 
   full_width = { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
   full_width_kana = { with: /\A[ァ-ヶー－]+\z/ }

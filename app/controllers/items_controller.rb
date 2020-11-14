@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order(id: :DESC)
-   
+    @order = Order.select(:item_id)
   end
 
   def new
@@ -16,17 +16,16 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+      render action: :new
     end
   end
 
   def show
+    @order = Order.select(:item_id)
   end
 
-  def edit 
-    unless @item.user == current_user
-      redirect_to root_path
-    end
+  def edit
+    redirect_to root_path unless @item.user == current_user
   end
 
   def update
@@ -38,9 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    unless @item.user == current_user
-      redirect_to root_path
-    end
+    redirect_to root_path unless @item.user == current_user
     @item.destroy
     redirect_to root_path
   end

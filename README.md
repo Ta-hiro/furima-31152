@@ -15,7 +15,7 @@
 
 ### Association
 - has_many : items
-- has_many : buys
+- has_many : orders
 
 
 ## items table
@@ -34,7 +34,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :buy
+- has_one    :order
 - belongs_to :category
 - belongs_to :product_status
 - belongs_to :delivery_burden
@@ -42,7 +42,7 @@
 - belongs_to :shipping_period
 
 
-## buys table
+## orders table
 
 | Column         | Type        | Options           |
 |----------------|-------------|-------------------|
@@ -52,21 +52,21 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
-- has_one :delivery_address
+- has_one    :address
 
 
-## delivery_addresses table
+## addresses table
 
 | Column          | Type        | Options           |
 |-----------------|-------------|-------------------|
-| prefectures_id  | integer     | null: false       |
+| prefecture_id   | integer     | null: false       |
 | postal_code     | string      | null: false       |
 | phone_number    | string      | null: false       |
-| municipalities  | string      | null: false       |
-| address         | string      | null: false       |
+| city            | string      | null: false       |
+| house_number    | string      | null: false       |
 | building_name   | string      |                   |
-| buy             | references  | foreign_key: true |
+| order           | references  | foreign_key: true |
 
 ### Association
-- belongs_to :buy
+- belongs_to :order
 - belongs_to :prefectures
