@@ -1,6 +1,6 @@
 class BuyForm
   include ActiveModel::Model
-   attr_accessor :postal_code, :phone_number, :prefectures_id, :city, :house_number, :building_name, :user_id, :item_id
+   attr_accessor :postal_code, :phone_number, :prefectures_id, :city, :house_number, :building_name, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
@@ -8,6 +8,7 @@ class BuyForm
     validates :prefectures_id, numericality: { other_than: 0 }
     validates :city, format: { with: /\A[ぁ-んァ-ンー-龥]+\z/ }
     validates :house_number
+    validates :token
   end
   
   def save

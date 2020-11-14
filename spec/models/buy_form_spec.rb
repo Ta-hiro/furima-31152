@@ -5,9 +5,9 @@ RSpec.describe BuyForm, type: :model do
     @buy = FactoryBot.build(:buy_form)
   end
 
-  describe '商品購入配送先登録' do
-    context '配送先登録がうまくいくとき' do
-      it 'postal_code,prefectures_id,city,house_number,building_name,phone_numberが存在すれば保存できる' do
+  describe '商品購入機能' do
+    context '商品購入登録がうまくいくとき' do
+      it 'postal_code,prefectures_id,city,house_number,building_name,phone_number,tokenが存在すれば保存できる' do
         expect(@buy).to be_valid
       end
       it 'building_nameが入力されてなくても保存できる' do
@@ -16,7 +16,12 @@ RSpec.describe BuyForm, type: :model do
       end
     end
 
-    context '配送先登録がうまくいかないとき' do
+    context '商品購入登録がうまくいかないとき' do
+      it 'tokenがからのとき' do
+        @buy.token = nil
+        @buy.valid?
+        expect(@buy.errors.full_messages).to include("Token can't be blank")
+      end
       it 'postal_codeが入力されていないとき' do
         @buy.postal_code = nil
         @buy.valid?

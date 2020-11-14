@@ -26,7 +26,7 @@
       </span>
     </div>
     <%# <ここから> %>
-    <% unless @order.where(item_id: @item).exists? %>
+    <%# <% unless @order.where(item_id: @item).exists? %> %>
       <% if user_signed_in? %>
         <% if current_user == @item.user %>
           <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %>
@@ -36,7 +36,7 @@
         <%= link_to '購入画面に進む', item_orders_path(@item) ,class:"item-red-btn"%>
         <%end%>
       <%end%>
-    <%end%>
+    <%# <%end%> %>
   <%# <kokomade> %>
     <div class="item-explain-box">
       <span><%= @item.explanation %></span>
