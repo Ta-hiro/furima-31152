@@ -9,7 +9,6 @@
     <div class='item-img-content'>
       <%= image_tag @item.image ,class:"item-box-img" %>
 
-      <%# <% if @order.where(item_id: @item).exists? %> 
       <%unless @item.order.blank? %>
       <div class='sold-out'>
         <span>Sold Out!!</span>
