@@ -24,16 +24,16 @@ RSpec.describe Address, type: :model do
         expect(@address.errors.full_messages).to include("Postal code can't be blank")
       end
       it 'postal_codeが「333-4444」の形じゃないとき' do
-        @address.postal_code = "1234567"
+        @address.postal_code = '1234567'
         @address.valid?
         # binding.pry
-        expect(@address.errors.full_messages).to include()
+        expect(@address.errors.full_messages).to include
       end
       it 'prefectures_idが入力されていないとき' do
         @address.prefectures_id = 0
         @address.valid?
         # binding.pry
-        expect(@address.errors.full_messages).to include()
+        expect(@address.errors.full_messages).to include
       end
       it 'house_numberが入力されていないとき' do
         @address.house_number = nil

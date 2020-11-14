@@ -28,14 +28,14 @@ RSpec.describe BuyForm, type: :model do
         expect(@buy.errors.full_messages).to include("Postal code can't be blank")
       end
       it 'postal_codeが「333-4444」の形じゃないとき' do
-        @buy.postal_code = "1234567"
+        @buy.postal_code = '1234567'
         @buy.valid?
-        expect(@buy.errors.full_messages).to include("Postal code is invalid")
+        expect(@buy.errors.full_messages).to include('Postal code is invalid')
       end
       it 'prefectures_idが入力されていないとき' do
         @buy.prefectures_id = 0
         @buy.valid?
-        expect(@buy.errors.full_messages).to include("Prefectures must be other than 0")
+        expect(@buy.errors.full_messages).to include('Prefectures must be other than 0')
       end
       it 'cityが入力されていないとき' do
         @buy.city = nil
@@ -43,9 +43,9 @@ RSpec.describe BuyForm, type: :model do
         expect(@buy.errors.full_messages).to include("City can't be blank")
       end
       it 'cityが全角平仮名、カタカナ、漢字で入力されていないとき' do
-        @buy.city = "ddd"
+        @buy.city = 'ddd'
         @buy.valid?
-        expect(@buy.errors.full_messages).to include("City is invalid")
+        expect(@buy.errors.full_messages).to include('City is invalid')
       end
       it 'house_numberが入力されていないとき' do
         @buy.house_number = nil
@@ -58,9 +58,9 @@ RSpec.describe BuyForm, type: :model do
         expect(@buy.errors.full_messages).to include("Phone number can't be blank")
       end
       it 'phone_numberに-が入力されているとき' do
-        @buy.phone_number = "012-3456-7890"
+        @buy.phone_number = '012-3456-7890'
         @buy.valid?
-        expect(@buy.errors.full_messages).to include("Phone number is invalid")
+        expect(@buy.errors.full_messages).to include('Phone number is invalid')
       end
     end
   end
